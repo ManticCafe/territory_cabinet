@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "territory_cabinet:block/test_block"
+    }
+  }
+}
