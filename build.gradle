@@ -197,8 +197,8 @@ publishing {
     }
     repositories {
         maven {
-            name = "Forge"
-            url = "https://maven.minecraftforge.net/"
+            name = "forge"
+            url = "http://lss233.littleservice.cn/repositories/minecraft"
         }
     }
 }
