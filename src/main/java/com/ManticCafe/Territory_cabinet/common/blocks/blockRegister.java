@@ -18,17 +18,16 @@ public class blockRegister {
 
     // register:
 
-    public static final RegistryObject<Block> territory_cabinet = BLOCKS
-            .register("territory_cabinet",() -> new Block(BlockBehaviour.Properties.of().strength(5.0f).sound(SoundType.METAL)));
+//    public static final RegistryObject<Block> territory_cabinet = BLOCKS
+//            .register("territory_cabinet",() -> new Block(BlockBehaviour.Properties.of().strength(5.0f).sound(SoundType.METAL)));
+//
+//    public static final RegistryObject<Item> TerritoryCabinetItem = ITEMS
+//            .register("territory_cabinet",() -> new BlockItem(territory_cabinet.get(),new Item.Properties()));
 
-    public static final RegistryObject<Item> TerritoryCabinetItem = ITEMS
-            .register("territory_cabinet",() -> new BlockItem(territory_cabinet.get(),new Item.Properties()));
 
-
-    public static void register( ) {
-        var bus = FMLJavaModLoadingContext.get().getModEventBus();
-        BLOCKS.register(bus);
-        ITEMS.register(bus);
+    public static void register(IEventBus eventBus) {
+        BLOCKS.register(eventBus);
+        ITEMS.register(eventBus);
     }
 
 }

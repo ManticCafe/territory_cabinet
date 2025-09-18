@@ -14,9 +14,8 @@ public class itemRegister {
 
 
 
-    public static void register( ) {
-        var bus = FMLJavaModLoadingContext.get().getModEventBus();
-        ITEMS.register(bus);
+    public static void register(IEventBus eventBus) {
+        ITEMS.register(eventBus);
     }
 
 }

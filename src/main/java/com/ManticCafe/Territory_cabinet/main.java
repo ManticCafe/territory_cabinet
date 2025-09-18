@@ -28,6 +28,7 @@ import org.slf4j.Logger;
 import com.ManticCafe.Territory_cabinet.common.blocks.blockRegister;
 import com.ManticCafe.Territory_cabinet.common.items.itemRegister;
 import com.ManticCafe.Territory_cabinet.common.GUI.creativeModeTabs.functionBlockTabs;
+import com.ManticCafe.Territory_cabinet.common.multiblock.MultiblockRegistry;
 
 @Mod(main.MODID)
 public class main {
@@ -36,14 +37,27 @@ public class main {
     // Directly reference a slf4j logger
     private static final Logger LOGGER = LogUtils.getLogger();
 
-    //主函数
-    public main() {
+    // 主函数
+    public main(FMLJavaModLoadingContext context) {
+        IEventBus modEventBus = context.getModEventBus();
 
-        //方块注册
-        blockRegister.register();
-        //物品注册
-        itemRegister.register();
-        //功能方块物品栏注册
-        functionBlockTabs.register();
+        System.out.println("Starting mod initialization...");
+
+        modEventBus.addListener(this::onCommonSetup);
+
+        // 方块注册
+        blockRegister.register(modEventBus);
+        // 物品注册
+        itemRegister.register(modEventBus);
+        // 多方块注册
+        MultiblockRegistry.register(modEventBus);
+        // 功能方块物品栏注册
+        // functionBlockTabs.register(modEventBus);
+    }
+
+
+    private void onCommonSetup(final FMLCommonSetupEvent event) {
+        // 这里可以放置需要在模组初始化时执行的代码
+        LOGGER.info("Territory Cabinet mod common setup complete");
     }
 }

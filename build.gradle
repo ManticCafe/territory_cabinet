@@ -120,6 +120,11 @@ repositories {
     // flatDir {
     //     dir 'libs'
     // }
+
+    maven{ url= 'https://maven.aliyun.com/repository/public/'}
+    maven{ url= 'https://maven.aliyun.com/repository/central/'}
+    maven{ url= 'https://maven.aliyun.com/repository/qradle-plugin/'}
+    maven{ url= 'https://maven.aliyun.com/repository/forqe/'}
 }
 
 dependencies {

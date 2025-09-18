@@ -11,6 +11,7 @@ import com.ManticCafe.Territory_cabinet.main;
 import net.minecraftforge.registries.RegistryObject;
 import com.ManticCafe.Territory_cabinet.common.blocks.blockRegister;
 import com.ManticCafe.Territory_cabinet.common.items.itemRegister;
+import com.ManticCafe.Territory_cabinet.common.multiblock.MultiblockRegistry;
 
 
 
@@ -18,15 +19,14 @@ public class functionBlockTabs {
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB,main.MODID);
 
     public static final RegistryObject<CreativeModeTab> Mod_Tab = CREATIVE_MODE_TABS.register("function_block_tab", () -> CreativeModeTab.builder()
-            .icon(() -> new ItemStack(blockRegister.territory_cabinet.get())).title(Component.translatable("itemGroup.function_blocks"))
+            .icon(() -> new ItemStack(MultiblockRegistry.territory_cabinet.get())).title(Component.translatable("itemGroup.function_blocks"))
             .displayItems((pParameters, pOutput) -> {
-                pOutput.accept(blockRegister.territory_cabinet.get());
+                pOutput.accept(MultiblockRegistry.territory_cabinet.get());
             })
             .build());
 
     //注册事件
-    public  static void register() {
-        var bus = FMLJavaModLoadingContext.get().getModEventBus();
-        CREATIVE_MODE_TABS.register(bus);
+    public  static void register(IEventBus eventBus) {
+        CREATIVE_MODE_TABS.register(eventBus);
     }
 }
