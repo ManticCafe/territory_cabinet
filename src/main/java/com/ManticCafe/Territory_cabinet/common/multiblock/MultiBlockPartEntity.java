@@ -3,15 +3,8 @@ package com.ManticCafe.Territory_cabinet.common.multiblock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.NbtUtils;
-import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
-
-import com.ManticCafe.Territory_cabinet.common.multiblock.MultiBlockEntity;
-import com.ManticCafe.Territory_cabinet.common.multiblock.MultiBlockPart;
-import com.ManticCafe.Territory_cabinet.common.multiblock.MultiBlock;
-import com.ManticCafe.Territory_cabinet.common.multiblock.MultiblockRegistry;
-
 
 public class MultiBlockPartEntity extends BlockEntity {
     private BlockPos mainBlockPos;
@@ -22,6 +15,7 @@ public class MultiBlockPartEntity extends BlockEntity {
 
     public void setMainBlockPos(BlockPos pos) {
         this.mainBlockPos = pos;
+        setChanged();
     }
 
     public BlockPos getMainBlockPos() {
@@ -44,12 +38,5 @@ public class MultiBlockPartEntity extends BlockEntity {
         }
     }
 
-    public static void tick(Level level, BlockPos pos, BlockState state, MultiBlockPartEntity entity) {
-        if (entity.mainBlockPos != null && level.getGameTime() % 20 == 0) {
-            BlockState mainState = level.getBlockState(entity.mainBlockPos);
-            if (!mainState.is(MultiblockRegistry.territory_cabinet.get())) {
-                level.removeBlock(pos, false);
-            }
-        }
-    }
+    // 移除了 tick 方法
 }
