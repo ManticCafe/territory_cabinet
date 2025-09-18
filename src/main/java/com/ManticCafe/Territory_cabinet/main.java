@@ -52,7 +52,7 @@ public class main {
         // 多方块注册
         MultiblockRegistry.register(modEventBus);
         // 功能方块物品栏注册
-        // functionBlockTabs.register(modEventBus);
+        functionBlockTabs.register(modEventBus);
     }
 
 
