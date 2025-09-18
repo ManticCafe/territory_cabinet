@@ -8,7 +8,6 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import com.ManticCafe.Territory_cabinet.main;
 import com.ManticCafe.Territory_cabinet.common.blocks.blockRegister;
-import com.ManticCafe.Territory_cabinet.common.multiblock.MultiblockRegistry;
 import net.minecraftforge.registries.RegistryObject;
 
 public class itemRegister {
@@ -16,8 +15,8 @@ public class itemRegister {
 
     // register:
 
-    public static final RegistryObject<Item> TERRITORY_CABINET = ITEMS.register("territory_cabinet",
-            () -> new BlockItem(MultiblockRegistry.territory_cabinet.get(), new Item.Properties()));
+    public static final RegistryObject<Item> TerritoryCabinetItem = ITEMS
+            .register("territory_cabinet",() -> new BlockItem(blockRegister.territory_cabinet.get(),new Item.Properties()));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

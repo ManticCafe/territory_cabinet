@@ -1,6 +1,7 @@
 {
     "//方块本地化：":" ",
     "block.territory_cabinet.territory_cabinet": "领地柜",
+    "block.territory_cabinet.territory_cabinet_high_top": "领地柜",
     "//物品本地化：":" ",
     "item.territory_cabinet.territory_cabinet": "领地柜",
     "//物品栏本地化：":" ",
