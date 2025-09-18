@@ -13,7 +13,6 @@ public class HighTopBlock extends Block {
 
     @Override
     public void playerWillDestroy(Level world, BlockPos pos, BlockState state, Player player) {
-        // 破坏顶部方块时同时破坏基础方块
         if (!world.isClientSide /*&& !player.isCreative()*/) {
             world.destroyBlock(pos.below(), true);
         }

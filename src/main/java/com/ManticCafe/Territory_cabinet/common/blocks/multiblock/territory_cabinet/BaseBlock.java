@@ -22,14 +22,12 @@ public class  BaseBlock extends Block {
     public void setPlacedBy(Level world, BlockPos pos, BlockState state, @Nullable LivingEntity placer, ItemStack stack) {
         super.setPlacedBy(world, pos, state, placer, stack);
         if (!world.isClientSide) {
-            // 自动在上方放置顶部方块
             world.setBlockAndUpdate(pos.above(), blockRegister.territory_cabinet_high_top.get().defaultBlockState());
         }
     }
 
     @Override
     public void playerWillDestroy(Level world, BlockPos pos, BlockState state, Player player) {
-        // 破坏基础方块时同时破坏顶部方块
         if (!world.isClientSide /*&& !player.isCreative()*/) {
             world.destroyBlock(pos.above(), true);
         }
