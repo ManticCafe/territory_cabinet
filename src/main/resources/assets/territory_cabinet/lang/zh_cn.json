@@ -4,6 +4,8 @@
     "block.territory_cabinet.territory_cabinet_high_top": "领地柜",
     "//物品本地化：":" ",
     "item.territory_cabinet.territory_cabinet": "领地柜",
+    "item.territory_cabinet.fire_axe": "消防斧",
     "//物品栏本地化：":" ",
-    "itemGroup.function_blocks": "Territory Cabinet | 功能方块"
+    "itemGroup.function_blocks_tabs": "Territory Cabinet | 功能方块",
+    "itemGroup.tools_tabs": "Territory Cabinet | 工具"
 }

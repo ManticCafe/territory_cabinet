@@ -9,6 +9,7 @@ import org.slf4j.Logger;
 import com.ManticCafe.Territory_cabinet.common.blocks.blockRegister;
 import com.ManticCafe.Territory_cabinet.common.items.itemRegister;
 import com.ManticCafe.Territory_cabinet.common.GUI.creativeModeTabs.functionBlockTabs;
+import com.ManticCafe.Territory_cabinet.common.GUI.creativeModeTabs.toolsTabs;
 
 @Mod(main.MODID)
 public class main {
@@ -31,6 +32,8 @@ public class main {
         itemRegister.register(modEventBus);
         // 功能方块物品栏注册
         functionBlockTabs.register(modEventBus);
+        //工具物品栏注册
+        toolsTabs.register(modEventBus);
     }
 
 

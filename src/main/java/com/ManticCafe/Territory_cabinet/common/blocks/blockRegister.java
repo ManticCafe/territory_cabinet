@@ -5,6 +5,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.material.PushReaction;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.DeferredRegister;
@@ -31,6 +32,7 @@ public class blockRegister {
                     .strength(5.0f,5.0f)
                     .sound(SoundType.METAL)
                     .noOcclusion()
+                    .pushReaction(PushReaction.BLOCK)
     ));
 
     public static final RegistryObject<Block> territory_cabinet_high_top = BLOCKS.register("territory_cabinet_high_top",
@@ -38,6 +40,7 @@ public class blockRegister {
                     .strength(5.0f,5.0f)
                     .sound(SoundType.METAL)
                     .noOcclusion()
+                    .pushReaction(PushReaction.BLOCK)
     ));
 
 
